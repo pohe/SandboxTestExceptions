@@ -25,10 +25,22 @@ namespace Sandbox
             {
                 Console.WriteLine("Format exception " + fex.Message);
             }
+            catch (DivideByZeroException dex)
+            {
+                Console.WriteLine("Hov du forsøgte at dividere med 0, det må du ikke!");
+            }
+            catch (OverflowException oex)
+            {
+                Console.WriteLine("Tallet er for stort!");
+            }
             catch (Exception e)
             {
                 Console.WriteLine("Generel exception " + e.Message);
                 //throw;
+            }
+            finally  //Blver udført under alle omstændigheder 
+            {
+                Console.WriteLine("Denne del bliver altid udført!");
             }
            
 
