@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace Sandbox
 {
@@ -10,9 +11,13 @@ namespace Sandbox
             try
             {
                 string input = "";
-                Console.WriteLine("Indtast tal1:");
+                Console.WriteLine("Indtast tal1 (mellem 1 og 100):");
                 input = Console.ReadLine();
                 int tal1 = int.Parse(input);
+                if (tal1 > 100 || tal1 < 1)
+                {
+                    throw new NotInRangeException("Input skal være i området 1-100");
+                }
 
                 Console.WriteLine("Indtast tal2:");
                 input = Console.ReadLine();
@@ -24,6 +29,7 @@ namespace Sandbox
             catch (FormatException fex)
             {
                 Console.WriteLine("Format exception " + fex.Message);
+                //throw;
             }
             catch (DivideByZeroException dex)
             {
@@ -33,10 +39,14 @@ namespace Sandbox
             {
                 Console.WriteLine("Tallet er for stort!");
             }
+            catch (NotInRangeException notEx)
+            {
+                Console.WriteLine(notEx.Message);
+            }
             catch (Exception e)
             {
                 Console.WriteLine("Generel exception " + e.Message);
-                //throw;
+                
             }
             finally  //Blver udført under alle omstændigheder 
             {
