@@ -18,11 +18,10 @@ namespace Sandbox
                 {
                     throw new NotInRangeException("Input skal være i området 1-100");
                 }
-
                 Console.WriteLine("Indtast tal2:");
                 input = Console.ReadLine();
                 int tal2 = int.Parse(input);
-
+                
                 int result = tal1 / tal2;
                 Console.WriteLine($"Resultatet af {tal1}/{tal2} er {result}");
             }
