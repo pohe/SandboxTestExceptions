@@ -21,14 +21,18 @@ namespace Sandbox
                 int result = tal1 / tal2;
                 Console.WriteLine($"Resultatet af {tal1}/{tal2} er {result}");
             }
+            catch (FormatException fex)
+            {
+                Console.WriteLine("Format exception " + fex.Message);
+            }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                Console.WriteLine("Generel exception " + e.Message);
+                //throw;
             }
            
 
-            //Console.WriteLine("Hello world!");
+            Console.WriteLine("Slut på test af exceptions");
 
             // The LAST line of code should be ABOVE this line
         }
