@@ -17,6 +17,8 @@ namespace Sandbox
             input = Console.ReadLine();
             int tal2 = int.Parse(input);
 
+            int result = tal1 / tal2;
+            Console.WriteLine($"Resultatet af {tal1}/{tal2} er {result}");
 
             //Console.WriteLine("Hello world!");
 
