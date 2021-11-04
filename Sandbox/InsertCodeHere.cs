@@ -10,7 +10,7 @@ namespace Sandbox
             // The FIRST line of code should be BELOW this line
             try
             {
-                //Dette er rettet serveren
+                //Dette er rettet serveren og serveren igen
                 string input = "";
                 Console.WriteLine("Indtast tal1 (mellem 1 og 100):");
                 input = Console.ReadLine();
